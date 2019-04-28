@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # link ok
+  # validation ok
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.string "zip_code"
@@ -53,6 +55,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
     t.index ["room_id"], name: "index_reservations_on_room_id"
   end
 
+  # link ok
+  # validation ok
   create_table "rooms", force: :cascade do |t|
     t.bigint "city_id"
     t.bigint "admin_id"
@@ -67,6 +71,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
     t.index ["city_id"], name: "index_rooms_on_city_id"
   end
 
+  # link ok
+  # validation ok
   create_table "users", force: :cascade do |t|
     t.bigint "city_id"
     t.string "email"
