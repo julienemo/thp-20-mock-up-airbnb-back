@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
     t.datetime "updated_at", null: false
   end
 
+  # link ok
+  # validation ok
   create_table "join_table_message_recipients", force: :cascade do |t|
     t.bigint "private_message_id"
     t.bigint "recipient_id"
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
     t.index ["recipient_id"], name: "index_join_table_message_recipients_on_recipient_id"
   end
 
+  # link ok
+  # validation ok
   create_table "private_messages", force: :cascade do |t|
     t.bigint "sender_id"
     t.text "content"
@@ -42,6 +46,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_143052) do
     t.index ["sender_id"], name: "index_private_messages_on_sender_id"
   end
 
+  # link ok
+  # validation
   create_table "reservations", force: :cascade do |t|
     t.bigint "guest_id"
     t.bigint "room_id"

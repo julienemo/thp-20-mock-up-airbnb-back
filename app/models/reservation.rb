@@ -11,6 +11,7 @@ class Reservation < ApplicationRecord
   validate :duration_cant_be_longer_than_31_days
 
   validate :no_over_renting
+  validate :no_over_lapping_resa
 
 
   belongs_to :guest, class_name: "User", foreign_key: "guest_id"
@@ -41,4 +42,16 @@ class Reservation < ApplicationRecord
     end
   end
 
+  def no_over_lapping_resa
+    available_bed = Room.find(room_id).nb_bed
+    (start_date..end_date).each do |day|
+      if day_reserved(start_date, end_date) &&
+    end
+  end
+
+  private
+
+  def day_reserved(start, end)
+    day >= start && day <= end
+  end
 end
