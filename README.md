@@ -30,5 +30,10 @@ The seeded BD contains following tables
 * join_table_message_recipients (3 records per message)
 
 
+Validations to come
 
+* starting date of reservation must be within 365 days
 
+* nb beds must be positive
+
+* add boolean 'partial rental authorized' and collateral validations
